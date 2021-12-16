@@ -315,7 +315,9 @@ extension PresentrController {
         coordinator.animate(alongsideTransition: { context in
             blurEffectView?.effect = self.visualEffect
             self.chromeView.alpha = 1.0
-        }, completion: nil)
+        }) { _ in
+            self.chromeView.alpha = 1.0
+        }
     }
     
     override func dismissalTransitionWillBegin() {
